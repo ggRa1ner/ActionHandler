@@ -13,15 +13,11 @@ export class Action {
 
     // --- [ SETTERS ] ---
     set_name(_name) { this.name = _name; return; }
-    add_action() {
-        action_lists.push(this)
-    }
 
     // --- [ Functions ] ---
-    select() {
-        this.action()
-        return;
-    }
+    select() { this.action(); return; }
+    add_action() { action_lists.push(this); return; }
+
 }
 
 export function get_action_list() {
