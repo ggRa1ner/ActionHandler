@@ -28,16 +28,5 @@
 
 Example of usage:
 ```javascript
-import { Action, get_action_list } from './actions.js';
-
-function test1() { console.log("test1 text"); }
-function test2() { console.log("test2 text"); }
-
-const action1 = new Action("test1", test1).add_action();
-const action2 = new Action("test2", test2).add_action();
-
-const action_list = get_action_list();
-const user_input = 1; // Example user input
-
-action_list[user_input].select(); // Outputs "test2 text"
+In index.js
 ```
