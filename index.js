@@ -71,7 +71,29 @@ function test_3() {
     });
 }
 
+function tests_with_arrow_functions() {
+    const action1 = new Action("action1", () => {
+        console.log("Action1 has been completed!")
+        console.log("Another code there....")
+    })
+
+    const action2 = new Action("action2", () => {
+        console.log("Action2 has been completed!")
+        console.log("2+2=" + (2+2))
+    })
+
+    const action3 = new Action("action3", () => {
+        console.log("Action3 has been completed!")
+        console.log("Maybe it's work?")
+    })
+
+    action1.select() // Passed.
+    action2.select() // Passed. Output: "2+2=4"
+    action3.select() // Passed
+}
+
 // Calling tests
 test_1(); // Output: test3 text
 test_2(); // Output: User selected action index: X. Output: testY text
 test_3(); // Output: Enter a number between 0 and Z: N. Output: testM text
+tests_with_arrow_functions()
