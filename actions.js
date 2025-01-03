@@ -1,10 +1,9 @@
-let action_lists = []
+let action_lists = [];
 
-export class Action {
-
+class Action {
     constructor(_name, _action) {
-        this.name = _name
-        this.action = _action
+        this.name = _name;
+        this.action = _action;
     }
 
     // --- [ GETTERS ] ---
@@ -17,9 +16,22 @@ export class Action {
     // --- [ Functions ] ---
     select() { this.action(); return; }
     add_action() { action_lists.push(this); return; }
-
 }
 
-export function get_action_list() {
-    return action_lists
-}
+const ActionManager = {
+    get_action_list() {
+        return action_lists;
+    },
+
+    get_action_by_name(need_name) {
+        for (let i = 0; i < action_lists.length; i++) {
+            const element = action_lists[i];
+            if (element.get_name() === need_name) {
+                return element;
+            }
+        }
+        return null; // return null if not found
+    }
+};
+
+export { Action, ActionManager };
