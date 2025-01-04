@@ -14,7 +14,7 @@ class Action {
     set_name(_name) { this.name = _name; return; }
 
     // --- [ Functions ] ---
-    select() { this.action(); return; }
+    select(args) { this.action(args); return; }
     add_action() { action_lists.push(this); return; }
 }
 
