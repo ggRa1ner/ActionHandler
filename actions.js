@@ -4,6 +4,7 @@ class Action {
     constructor(_name, _action) {
         this.name = _name;
         this.action = _action;
+        action_lists.push(this)
     }
 
     // --- [ GETTERS ] ---
@@ -15,7 +16,6 @@ class Action {
 
     // --- [ Functions ] ---
     select(args) { this.action(args); return; }
-    add_action() { action_lists.push(this); return; }
 }
 
 const ActionManager = {
